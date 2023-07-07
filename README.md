@@ -1,3 +1,2 @@
 # CNN-gene-mutation
-
-.
+test
