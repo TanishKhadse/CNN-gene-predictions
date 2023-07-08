@@ -3,5 +3,6 @@
 To run frontend:
 ```
 cd src
+npm i
 npm start
 ```
