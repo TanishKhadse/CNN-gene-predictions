@@ -2,6 +2,9 @@
 
 Python, Tensorflow, Scikit-learn, React, Bootstrap, C++
 
+### About
+
+
 ### Setup
 Set up ```.env``` file in the root directory with the following contents:
 ```
