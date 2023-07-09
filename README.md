@@ -2,6 +2,13 @@
 
 Tech stack: Python, Tensorflow, Scikit-learn, React, Bootstrap, C++
 
+### Setup
+Set up ```.env``` file in the root directory with the following contents:
+```
+API_USER=
+API_PW=
+```
+
 Install Python dependencies:
 ```
 pip install -r requirements.txt
