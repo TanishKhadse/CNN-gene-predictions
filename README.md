@@ -1,6 +1,6 @@
 ### Predicting Gene Mutations Using Convolutional Neural Networks for Neurodegenerative Diseases
 
-Tech stack: Python, Tensorflow, Scikit-learn, React, Bootstrap, C++
+Python, Tensorflow, Scikit-learn, React, Bootstrap, C++
 
 ### Setup
 Set up ```.env``` file in the root directory with the following contents:
