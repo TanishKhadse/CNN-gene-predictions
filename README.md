@@ -12,12 +12,20 @@ API_USER=
 API_PW=
 ```
 
-Install Python dependencies:
+### Install Python dependencies (from root directory):
+
+Set up virtual environment:
+```
+cd src
+source venv/bin/activate
+```
+
+Install dependencies
 ```
 pip install -r requirements.txt
 ```
 
-To run frontend:
+### To run frontend (from root directory):
 ```
 cd app
 npm i
