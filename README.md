@@ -2,9 +2,14 @@
 
 Tech stack: Python, Tensorflow, Scikit-learn, React, Bootstrap, C++
 
+Install Python dependencies:
+```
+pip install -r requirements.txt
+```
+
 To run frontend:
 ```
-cd src
+cd app
 npm i
 npm start
 ```
