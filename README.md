@@ -17,8 +17,20 @@ API_PW=
 Set up virtual environment:
 ```
 cd src
+```
+
+For Mac
+```
+python3 -m venv venv
 source venv/bin/activate
 ```
+
+For Windows
+```
+python -m venv venv
+source 
+```
+
 
 Install dependencies
 ```
