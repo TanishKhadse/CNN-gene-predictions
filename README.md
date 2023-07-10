@@ -1,6 +1,6 @@
 ### Predicting Gene Mutations Using Convolutional Neural Networks for Neurodegenerative Diseases
 
-Python, Tensorflow, Scikit-learn, React, Bootstrap, C++
+Python, Tensorflow, Scikit-learn, Node.js, React.js, Bootstrap, C++
 
 ### About
 
