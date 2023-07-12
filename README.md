@@ -35,7 +35,7 @@ python -m venv venv
 
 Install dependencies
 ```
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 
 ### To run frontend (from root directory):
