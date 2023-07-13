@@ -3,9 +3,10 @@ import sqlite3
 
 
 #Opening & Reading disease and gene files
-disease_df = pd.read_csv(r"C:\\Users\snand\Documents\\CS Projects\\CNN-gene-predictions\disease_mappings_to_attributes.tsv.gz", sep="\t")
-gene_df = pd.read_csv(r"C:\\Users\snand\Documents\\CS Projects\\CNN-gene-predictions\\gene_associations.tsv.gz", sep= "\t")
+disease_df = pd.read_csv("data\disease_mappings_to_attributes.tsv.gz", sep="\t")
+gene_df = pd.read_csv("data\gene_associations.tsv.gz", sep= "\t")
 
+print(disease_df.head())
 
 #Connect to database
 conn = sqlite3.connect('disease.db')
