@@ -6,8 +6,6 @@ import sqlite3
 disease_df = pd.read_csv("data\disease_mappings_to_attributes.tsv.gz", sep="\t")
 gene_df = pd.read_csv("data\gene_associations.tsv.gz", sep= "\t")
 
-#print(disease_df.head())
-
 #Connect to database
 conn = sqlite3.connect('disease.db')
 
