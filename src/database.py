@@ -16,6 +16,16 @@ c = conn.cursor()
 disease_df.to_sql('neurodegen_diseases', conn, if_exists='replace')
 
 
+
+
+# c.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='neurodegen_diseases'")
+# if c.fetchone() is None:
+#     print("The 'neurodegen_diseases' table does not exist.")
+
+
+# print(conn)
+
+
 #Drop existing 'n_diseases' & 'other_diseases' table
 c.execute("DROP TABLE IF EXISTS n_diseases")
 c.execute("DROP TABLE IF EXISTS other_diseases")
@@ -25,9 +35,17 @@ c.execute("DROP TABLE IF EXISTS other_diseases")
 c.execute("CREATE TABLE n_diseases AS SELECT * FROM neurodegen_diseases WHERE diseaseClassNameMSH = 'Nervous System Diseases'")
 c.execute("CREATE TABLE other_diseases AS SELECT * FROM neurodegen_diseases WHERE diseaseClassNameMSH <> 'Nervous System Diseases'")
 
+
+# # View contents of n_diseases
+# c.execute("SELECT * FROM n_diseases")
+# n_diseases_data = c.fetchall()
+# print("n_diseases:")
+# for row in n_diseases_data:
+#     print(row)
+
+
 # Read data from 'n_diseases' table into a dataframe
 d_df = pd.read_sql_query("SELECT * FROM n_diseases", conn)
-
 
 
 #Close connection
