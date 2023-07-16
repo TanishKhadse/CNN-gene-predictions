@@ -44,6 +44,12 @@ Install dependencies
 pip3 install -r requirements.txt
 ```
 
+### Run C++:
+```
+cd graphs
+make; ./bin/exec
+```
+
 ### To run frontend (from root directory):
 ```
 cd app
