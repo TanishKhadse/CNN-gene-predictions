@@ -22,13 +22,19 @@ cd src
 
 For Mac
 ```
+# make venv
 python3 -m venv venv
+
+# activate venv
 source venv/bin/activate
 ```
 
 For Windows
 ```
+# make venv
 python -m venv venv
+
+# activate venv
 .\venv\Scripts\activate
 ```
 
