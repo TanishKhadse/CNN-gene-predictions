@@ -1,7 +1,10 @@
 #include "main.h"
+#include "graph.h"
+#include <iostream>
 
-// define graph in here
+// test graph implementation here
 
-int main () {
+int main() {
+    std::cout << "Hello World" << std::endl;
     return 0;
 }
