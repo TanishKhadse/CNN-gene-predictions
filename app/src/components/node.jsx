@@ -10,6 +10,8 @@ export default function Node({gene}) {
                 flex 
                 items-center 
                 justify-center
+                select-none
+                cursor-pointer
             ">
                 <p>{gene.name}</p>
             </div>
