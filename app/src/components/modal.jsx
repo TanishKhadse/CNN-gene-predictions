@@ -6,9 +6,9 @@ import { useCallback } from "react";
 export default function Modal({isOpen, onClose}) {
 
     const dropIn = {
-        hidden: {y: "-100vh",  opacity: 0}, 
+        hidden: {y: "-100vh",  opacity: 1}, 
         visible:{y: "0"},
-        exit: {y: "-100vh", opacity: 0},
+        exit: {y: "-100vh", opacity: 1},
     }
 
     const handleSubmit = useCallback(() => {
@@ -21,6 +21,7 @@ export default function Modal({isOpen, onClose}) {
                 onClick={(e) => e.stopPropagation()}
                 class="
                     rounded-lg
+                    shadow-lg
                     flex
                     flex-col
                     items-center
@@ -29,9 +30,9 @@ export default function Modal({isOpen, onClose}) {
                     w-[30%]
                     h-[35%]
                     bg-neutral-300
-                    shadow-lg
                     relative
                     py-2
+                    z-50
                 "
                 variants={dropIn}
                 intial="hidden"
