@@ -3,9 +3,9 @@ import numpy as np
 import pandas as pd
 import scipy.sparse as sp
 import h5py
-from IPython.display import display
+# from IPython.display import display
 
-path = 'genes_phenes.mat'
+path = 'data\genes_phenes.mat'
 f = h5py.File(path, 'r')
 
 # adjacency matrix for gene_gene associations
@@ -16,12 +16,12 @@ gene_gene_adj = gene_gene_adj.tocsr()
 
 # gene features
 # TODO: import gene features file and create dataframe
-path_gene_feat = 'GeneFeatures.mat'
+path_gene_feat = 'data\GeneFeatures.mat'
 f_gene_feat = h5py.File(path_gene_feat, 'r')
 fgf = f_gene_feat
 gene_feat_data = np.transpose(np.array(fgf['GeneFeatures']))
 gene_feat_df = pd.DataFrame(gene_feat_data)
-display(gene_feat_df)
+# display(gene_feat_df)
 
 
 # adjacency matrix for gene-phenotype associations
@@ -32,7 +32,7 @@ gda_adj = gda_adj.tocsr()
 # print(gda_adj)
 
 # load the clinical features sparse representation
-df = pd.read_csv('clinicalfeatures_tfidf_sparse.csv')
+df = pd.read_csv('data\clinicalfeatures_tfidf_sparse.csv')
 df = df.drop('Unnamed: 0', axis=1)
 # print("Disease Feature Vectors: clinical features tfidf sparse matrix representation")
 # print("Row corresponds to disease, columns are terms, values = tf-idf of word")
@@ -52,6 +52,10 @@ human_name = h5py.h5r.get_name(phene_ids[0][0], f.id)
 phene_ids_data = f[human_name]
 phene_ids_df = pd.DataFrame(phene_ids_data)
 phene_ids_df = phene_ids_df.transpose()
+# print(phene_ids_df)
+
+#Saving the phene_id_df as a csv file
+phene_ids_df.to_csv('phene_ids_df.csv', index=False)
 
 # obtaining gene ids
 gene_ids = f['geneIds']
