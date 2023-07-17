@@ -1,6 +1,6 @@
 import './App.css';
 import { useState } from 'react';
-import Node from './components/node';
+import Graph from './components/graph';
 import Modal from './components/modal';
 
 function App() {
@@ -18,7 +18,8 @@ function App() {
           class="
             p-2 
             text-sm 
-            rounded-xl w-30 
+            rounded-xl 
+            w-30 
             bg-blue-500 
             hover:bg-blue-400 
             cursor-pointer
@@ -27,7 +28,7 @@ function App() {
         </div> 
       </div>
       
-      <Node gene={{name: "Node"}}/>
+      <Graph />
  
       {(showModal && <Modal isOpen={showModal} onClose={() => setShowModal(false)}/>)}
     </div>
