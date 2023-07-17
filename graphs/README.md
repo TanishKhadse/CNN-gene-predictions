@@ -4,6 +4,8 @@ Research uses for cmake + dockerfile -- either we need both or we need neither
 
 Make sure majority of heavy computation goes here instead of python; we can use sockets to send graph data back and forth
 
+Work on Graph implementation that can easily be sent through and read from an API to the frontend
+
 for now, 
 
 ```
