@@ -7,10 +7,6 @@ function App() {
   const [numEntries, setNumEntries] = useState(10)
   const [showModal, setShowModal] = useState(false)
 
-  const close = () => setShowModal(false)
-  const open = () => setShowModal(true)
-//showModal ? close() : open()
-
   return (
     <div>
       <div className="App" class="flex justify-between items-center bg-gray-600 p-3 text-neutral-50 text-lg">

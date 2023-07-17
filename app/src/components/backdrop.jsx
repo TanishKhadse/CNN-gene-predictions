@@ -11,7 +11,7 @@ export default function Backdrop({children, onClick}) {
                 w-[100%] 
                 h-[100%]
                 bg-black
-                opacity-70
+                opacity-60
                 flex
                 items-center
                 justify-center
