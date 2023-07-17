@@ -46,8 +46,9 @@ pip3 install -r requirements.txt
 
 ### Run C++:
 ```
-cd graphs
-make; ./bin/exec
+mkdir build
+cd build
+cmake ..
 ```
 
 ### To run frontend (from root directory):
