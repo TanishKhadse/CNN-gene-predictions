@@ -49,6 +49,8 @@ pip3 install -r requirements.txt
 mkdir build
 cd build
 cmake ..
+
+make; ./bin/exec
 ```
 
 ### To run frontend (from root directory):
