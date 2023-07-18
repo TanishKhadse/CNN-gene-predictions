@@ -3,11 +3,7 @@ import numpy as np
 import pandas as pd
 import scipy.sparse as sp
 import h5py
-<<<<<<< HEAD
-# from IPython.display import display
-=======
 import os.path
->>>>>>> main
 
 # from IPython.display import display
 
