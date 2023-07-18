@@ -18,7 +18,7 @@ export default function GeneList({}) {
                 <div class="text-xl pb-4">
                     Genes
                 </div>
-                <div class="border-[1px] border-neutral-500 rounded-sm h-96">
+                <div class="border-[1px] border-neutral-500 rounded-sm bg-neutral-200 "> {/* set default height here */}
                     {
                     genes.map((g) => 
                         ( <Entry name={g} /> )
