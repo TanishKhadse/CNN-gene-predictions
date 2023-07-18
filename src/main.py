@@ -70,4 +70,3 @@ phene_ids_df.to_csv('phene_ids_df.csv', index=False)
 gene_ids = f['geneIds']
 gene_ids_df = pd.DataFrame(gene_ids)
 gene_ids_df = gene_ids_df.transpose()
-
