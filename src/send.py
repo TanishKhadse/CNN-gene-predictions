@@ -9,9 +9,10 @@ dir = os.path.dirname(cwd)
 
 def send_adj_matrix(matrix):
     serialized_matrix = np.array2string(matrix, separator=",")
+    print(serialized_matrix)
 
     # cpp_exec_file = '.' + os.path.join(dir, os.path.join('graphs', os.path.join('bin', 'exec')))
-    cpp_exec_file = "../graph/bin/exec"
+    cpp_exec_file = "../graphs/bin/exec" # test 
     process = subprocess.Popen([cpp_exec_file], stdin=subprocess.PIPE, stdout=subprocess.PIPE, text=True)
 
     process.stdin.write(serialized_matrix + '\n')
@@ -22,6 +23,7 @@ def send_adj_matrix(matrix):
     process.stdin.close()
     process.stdout.close()
     process.terminate()
+
 
     return result
 
