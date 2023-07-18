@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 import scipy.sparse as sp
 import h5py
-from IPython.display import display
+# from IPython.display import display
 
 path = 'genes_phenes.mat'
 f = h5py.File(path, 'r')
@@ -57,4 +57,3 @@ phene_ids_df = phene_ids_df.transpose()
 gene_ids = f['geneIds']
 gene_ids_df = pd.DataFrame(gene_ids)
 gene_ids_df = gene_ids_df.transpose()
-
