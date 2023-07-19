@@ -1,8 +1,6 @@
-#include "main.h"
-#include "graph.h"
-#include <iostream>
-
-// test graph implementation here
+#include "GraphResourceFactory.h"
+#include "GraphServiceSettingsFactory.h"
+#include "GraphService.h"
 
 #include <iostream>
 #include <vector>
@@ -41,6 +39,15 @@ int main() {
     // Process the adjacency matrix (add your C++ logic here)
 
     // Optionally, send back the result to Python backend using cout
+
+
+
+    // Restbed
+    auto resource_factory = make_shared<GraphResourceFactory>();
+    auto setting_factory = make_shared<GraphServiceSettingsFactory>();
+    GraphService service (resource_factory, setting_factory);
+
+    service.start();
 
 
     return 0;
