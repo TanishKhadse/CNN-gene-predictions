@@ -69,7 +69,7 @@ export default function Modal({isOpen, onClose}) {
                 "
                     onClick={handleSubmit}
                 >
-                    Confirm
+                    Generate
                 </div>
             </motion.div>
         </Backdrop>
