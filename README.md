@@ -45,6 +45,10 @@ Install dependencies
 pip3 install -r requirements.txt
 ```
 
+To Run Python files
+Make sure you are in the ```src``` directory, then you can run the files. 
+
+
 ### Run C++:
 ```
 mkdir build

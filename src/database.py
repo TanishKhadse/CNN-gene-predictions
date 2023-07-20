@@ -10,6 +10,7 @@ from api import get_disease_name
 parent = os.path.dirname(os.getcwd())
 phene_id_filename = os.path.join(parent, os.path.join('data','phene_ids_df.csv'))
 disease_id_df = pd.read_csv(phene_id_filename, sep="\t")
+
 #gene_df = pd.read_csv("../data/gene_associations.tsv.gz", sep= "\t")
 
 #Cleaning unneeded data
@@ -34,6 +35,7 @@ c.execute("CREATE TABLE allDiseases (disease_id TEXT)")
 disease_id_df.to_sql('allDiseases', conn, if_exists='replace')
 
 c.execute("ALTER TABLE allDiseases RENAME COLUMN '0' TO 'disease_id'")
+
 
 # count = c.execute("SELECT COUNT(*) as count_diseases FROM allDiseases")
 # print(count)
