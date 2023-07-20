@@ -9,6 +9,7 @@ function App() {
   const [showModal, setShowModal] = useState(false)
 
 
+
 /**
  * API needs to get top numEntries genes, 
  * 
@@ -45,7 +46,6 @@ function App() {
         <GeneList />
         <Graph />
       </div>
-       
  
       {(showModal && <Modal isOpen={showModal} onClose={() => setShowModal(false)}/>)}
     </div>

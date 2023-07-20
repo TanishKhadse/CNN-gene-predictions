@@ -24,6 +24,7 @@ gene_gene_adj = gene_gene_adj.tocsr()
 # gene features
 # TODO: import gene features file and create dataframe
 
+
 path_gene_feat = os.path.join(dir, os.path.join('data', 'GeneFeatures.mat'))
 f_gene_feat = h5py.File(path_gene_feat, 'r')
 fgf = f_gene_feat
@@ -69,4 +70,5 @@ phene_ids_df.to_csv('phene_ids_df.csv', index=False)
 # obtaining gene ids
 gene_ids = f['geneIds']
 gene_ids_df = pd.DataFrame(gene_ids)
+
 gene_ids_df = gene_ids_df.transpose()

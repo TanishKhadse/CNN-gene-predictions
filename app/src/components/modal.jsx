@@ -6,6 +6,7 @@ import { useCallback } from "react";
 export default function Modal({isOpen, onClose}) {
 
     const dropIn = {
+
         hidden: {y: "-100vh",  opacity: 1}, 
         visible:{y: "0"},
         exit: {y: "-100vh", opacity: 1},
