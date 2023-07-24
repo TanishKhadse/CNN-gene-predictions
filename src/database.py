@@ -54,7 +54,7 @@ conn.commit()
     
 
 # c.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='neurodegen_diseases'")
-# if c.fetchone() is None:
+# if c.fetchone() is None: 
 #     print("The 'neurodegen_diseases' table does not exist.")
 
 
