@@ -1,7 +1,7 @@
 import './App.css';
 import { useState } from 'react';
 import GeneList from './components/genelist';
-import Graph from './components/graph';
+import GraphView from './components/graph';
 import Modal from './components/modal';
 
 function App() {
@@ -19,7 +19,6 @@ function App() {
  * 
  * if options not set / blank graph, display "no genes displayed" in list component
  */
-
 
   return (
     <div class="z-0">
@@ -44,7 +43,7 @@ function App() {
       
       <div class="flex">
         <GeneList />
-        <Graph />
+        <GraphView />
       </div>
  
       {(showModal && <Modal isOpen={showModal} onClose={() => setShowModal(false)}/>)}
