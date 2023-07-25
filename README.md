@@ -9,9 +9,7 @@ Node.js version 8.11.0 and above
 ### Setup
 Set up ```.env``` file in the root directory with the following contents:
 ```
-API_USER=
-API_PW=
-API_key=
+OMIM_API_key=
 ```
 
 ### Install Python dependencies (from root directory):
