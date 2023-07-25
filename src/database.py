@@ -36,7 +36,6 @@ disease_id_df.to_sql('allDiseases', conn, if_exists='replace')
 
 c.execute("ALTER TABLE allDiseases RENAME COLUMN '0' TO 'disease_id'")
 
-
 # count = c.execute("SELECT COUNT(*) as count_diseases FROM allDiseases")
 # print(count)
 
