@@ -9,9 +9,7 @@ Node.js version 8.11.0 and above
 ### Setup
 Set up ```.env``` file in the root directory with the following contents:
 ```
-API_USER=
-API_PW=
-API_key=
+OMIM_API_key=
 ```
 
 ### Install Python dependencies (from root directory):
@@ -44,6 +42,10 @@ Install dependencies
 ```
 pip3 install -r requirements.txt
 ```
+
+To Run Python files
+Make sure you are in the ```src``` directory, then you can run the files. 
+
 
 ### Run C++:
 ```
