@@ -6,12 +6,11 @@ import os
 base_url = 'https://api.omim.org/api'
 load_dotenv()
 OMIM_key=os.getenv('OMIM_API_key')
-mim_number = 0
+mim_number = 0 
 
 # Go to api link
 def get_url(mim):
   return f'{base_url}/entry?mimNumber={mim}&apiKey={OMIM_key}&format=json'
-  
 
 # Construct the full API request URL
 def get_disease_name(mim):
@@ -22,7 +21,9 @@ def get_disease_name(mim):
     if response.status_code == 200:
         #Finding the name of the disease
         data = response.json()
-        disease_name = data['omim']['entryList'][0]['entry']['titles']['preferredTitle']
+        disease_name = ""
+        if len(data['omim']['entryList']) > 0:  
+          disease_name = data['omim']['entryList'][0]['entry']['titles']['preferredTitle']
         
         return disease_name
     #bad response
