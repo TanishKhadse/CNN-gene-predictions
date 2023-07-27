@@ -12,7 +12,7 @@ mim_number = 0
 def get_url(mim):
   return f'{base_url}/entry?mimNumber={mim}&apiKey={OMIM_key}&format=json'
 
-# Construct the full API request URL
+# Construct the full API request URL and access disease name
 def get_disease_name(mim):
     
     response = req.get(get_url(mim))
@@ -30,5 +30,3 @@ def get_disease_name(mim):
     else:
         print(f"Error accessing OMIM API. Status code: {response.status_code}")
         return None
-
-# print(get_disease_name(101200))
