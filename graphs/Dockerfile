@@ -1,7 +1,14 @@
-FROM
+FROM gcc:latest
 
-RUN
+COPY . /usr/src/cnn-gene-predictions
+WORKDIR /usr/src/cnn-gene-predictions
 
-WORKDIR /graphs
+RUN make
+
+CMD ["./exec"]
+
+LABEL Name=cnn-gene-predictions Version=0.0.1
+
+# WORKDIR /graphs
 
 # docker build -t 
