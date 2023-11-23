@@ -3,11 +3,25 @@ import { useState } from 'react';
 import GeneList from './components/genelist';
 import GraphView from './components/graph';
 import Modal from './components/modal';
+// import {useReadCypher} from 'use-neo4j';
+// import {useAxiosPrivate} from 'axios';
+
 
 function App() {
-  const [numEntries, setNumEntries] = useState(10)
-  const [showModal, setShowModal] = useState(false)
+  const [numEntries, setNumEntries] = useState(10);
+  const [showModal, setShowModal] = useState(false);
+  const [geneData, setGeneData] = useState();
 
+  // const axiosPrivate = useAxiosPrivate();
+
+  // const {cypher, error, loading, first }  = useReadCypher(""); // query goes inside of quotes
+
+
+  // const fetchGeneData = async () => {
+  //   const response = await axiosPrivate.get(''); // put in api path
+  //   const cData = response.data;
+  //   setGeneData=(cData);
+  // }
 
 
 /**
