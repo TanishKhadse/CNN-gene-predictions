@@ -1,0 +1,15 @@
+version: "2"
+
+services: 
+  model:
+    image: # image name e.g gcc:1.4-
+  cpp:
+    image: gcc:1.4-
+  frontend:
+    image: node:1.4-
+    
+
+  jobs:
+    env_file: .env
+    build: .
+    volumes: 
