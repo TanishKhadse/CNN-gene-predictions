@@ -10,6 +10,9 @@ Node.js version 8.11.0 and above
 Set up ```.env``` file in the root directory with the following contents:
 ```
 OMIM_API_key=
+NEO4J_USERNAME=
+NEO4J_PASSWORD=
+NEO4J_URI=
 ```
 
 ### Install Python dependencies (from root directory):
