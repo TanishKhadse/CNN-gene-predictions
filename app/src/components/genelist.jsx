@@ -1,16 +1,16 @@
 import { useState } from "react"
 import Entry from "./entry"
 
-export default function GeneList({}) {
-
-    const [genes, setGenes] = useState([
+export default function GeneList({list}) {
+    const [genes, setGenes] = useState(list)
+    /*
         "pull", 
         "data", 
         "from", 
         "api", 
         "number of genes from options", 
         "p-scores too"
-    ])
+    */
 
     return (
         <div class="w-[25vw]">

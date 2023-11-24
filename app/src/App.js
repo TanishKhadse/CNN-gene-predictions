@@ -1,5 +1,5 @@
 import './App.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import GeneList from './components/genelist';
 import GraphView from './components/graph';
 import Modal from './components/modal';
@@ -11,6 +11,20 @@ function App() {
   const [numEntries, setNumEntries] = useState(10);
   const [showModal, setShowModal] = useState(false);
   const [geneData, setGeneData] = useState();
+  const [data, setData] = useState([{}]); // testing RESTAPI
+
+  useEffect(() => {
+    fetch("/bio_data").then(
+      res => res.json()
+    ).then(
+      data => {
+        setData(data)
+        // console.log(data.bio_data)
+      }
+    ).catch(
+      error => console.error("Error fetching data: ", error)
+    )
+  }, [])
 
   // const axiosPrivate = useAxiosPrivate();
 
@@ -55,8 +69,8 @@ function App() {
         </div> 
       </div>
       
-      <div class="flex">
-        <GeneList />
+      <div class="flex text-black">
+        <GeneList list={data.bio_data}/>
         <GraphView />
       </div>
  

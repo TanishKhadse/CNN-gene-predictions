@@ -12,9 +12,12 @@ uri = os.getenv("NEO4J_URI")
 app = Flask(__name__)
 db = GraphDatabase.driver(uri, auth=(user, password))
 
-@app.route('/')
+
+# use this file to POST to graph DB based on neural network edge predictions.
+
+@app.route('/bio_data')
 def index():
-    return "Hello World!"
+    return {"bio_data": ["bio_data1", "bio_data2", "bio_data3"]}
 
 if __name__ == "__main__":
     app.run(debug=True)
