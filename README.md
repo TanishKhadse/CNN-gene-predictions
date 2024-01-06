@@ -1,6 +1,6 @@
 ### Predicting Gene Mutations Using Convolutional Neural Networks for Neurodegenerative Diseases
 
-Python, Tensorflow, Scikit-learn, Node.js, React.js, Tailwind, C++,
+Python, PyTorch, Node.js, React.js, Tailwind, Neo4J
 Node.js version 8.11.0 and above
 
 ### About
