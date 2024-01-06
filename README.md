@@ -46,22 +46,22 @@ Install dependencies
 pip3 install -r requirements.txt
 ```
 
+SSL certificate: Install Certificates.command
+
+
 To Run Python files
 Make sure you are in the ```src``` directory, then you can run the files. 
-
-
-### Run C++:
-```
-mkdir build
-cd build
-cmake ..
-
-make; ./bin/exec
-```
 
 ### To run frontend (from root directory):
 ```
 cd app
 npm i
 npm start
+```
+
+### Run backend:
+```
+cd src
+// activate venv
+python3 app.py
 ```
