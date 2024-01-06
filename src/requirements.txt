@@ -8,4 +8,6 @@ h5py==3.9.0
 scipy==1.11.1
 Flask==2.3.2
 neo4j==5.14.1
-
+torch==2.1.2
+torch_geometric==2.4.0
+matplotlib==3.8.2
