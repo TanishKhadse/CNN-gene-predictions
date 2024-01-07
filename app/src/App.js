@@ -19,7 +19,7 @@ function App() {
     ).then(
       data => {
         setData(data)
-        // console.log(data.bio_data)
+        console.log(data.bio_data)
       }
     ).catch(
       error => console.error("Error fetching data: ", error)

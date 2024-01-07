@@ -2,7 +2,7 @@ import { useState } from "react"
 import Entry from "./entry"
 
 export default function GeneList({list}) {
-    const [genes, setGenes] = useState(list)
+
     /*
         "pull", 
         "data", 
@@ -19,11 +19,11 @@ export default function GeneList({list}) {
                     Genes
                 </div>
                 <div class="border-[1px] border-neutral-500 rounded-sm bg-neutral-200 "> {/* set default height here */}
-                    {
-                    genes.map((g) => 
+                    {list && (
+                    list.map((g) => 
                         ( <Entry name={g} /> )
                         )
-                    }
+                    )}
                 </div>
 
             </div>

@@ -11,3 +11,4 @@ neo4j==5.14.1
 torch==2.1.2
 torch_geometric==2.4.0
 matplotlib==3.8.2
+neomodel==5.2.1

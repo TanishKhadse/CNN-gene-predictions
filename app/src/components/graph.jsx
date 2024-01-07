@@ -7,7 +7,7 @@ export default function GraphView({}) {
     const graph = {
 
         nodes: [
-            {id: 1, label: "Node 1", shape: "circle", color: "pink"},
+            {id: 1, label: "Node 1", shape: "circle", color: "skyblue"},
             {id: 2, label: "Node 2", shape: "circle", color: "pink"},
             {id: 3, label: "Node 3", shape: "circle", color: "pink"},
             {id: 4, label: "Node 4", shape: "circle", color: "pink"},
