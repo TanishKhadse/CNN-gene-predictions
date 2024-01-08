@@ -8,45 +8,31 @@ import Modal from './components/modal';
 
 
 function App() {
-  const [numEntries, setNumEntries] = useState(10);
+  // const [numEntries, setNumEntries] = useState(10);
   const [showModal, setShowModal] = useState(false);
-  const [geneData, setGeneData] = useState();
-  const [data, setData] = useState([{}]); // testing RESTAPI
+  const [graphData, setGraphData] = useState([{name: "AIDS"}, {name: "soham's left nut"}, {name: "soham's right nut"}]);
 
-  useEffect(() => {
-    fetch("/bio_data").then(
-      res => res.json()
-    ).then(
-      data => {
-        setData(data)
-        console.log(data.bio_data)
-      }
-    ).catch(
-      error => console.error("Error fetching data: ", error)
-    )
-  }, [])
+  const handleModalData = (data) => {
+    setGraphData(data)
+    // console.log(data)
 
-  // const axiosPrivate = useAxiosPrivate();
-
-  // const {cypher, error, loading, first }  = useReadCypher(""); // query goes inside of quotes
+  }
 
 
-  // const fetchGeneData = async () => {
-  //   const response = await axiosPrivate.get(''); // put in api path
-  //   const cData = response.data;
-  //   setGeneData=(cData);
-  // }
+  // useEffect(() => {
+  //   fetch("/data").then(
+  //     res => res.json()
+  //   ).then(
+  //     data => {
+  //       console.log(data)
+  //       setData(data)
+  //     }
+  //   ).catch(
+  //     error => console.error("Error fetching data: ", error)
+  //   )
+  // }, [])
 
 
-/**
- * API needs to get top numEntries genes, 
- * 
- * state -> genes, setGenes - an array of genes that will be displayed; will have length of numEntries
- * useEffect(() => getAllGenes)
- * 
- * 
- * if options not set / blank graph, display "no genes displayed" in list component
- */
 
   return (
     <div class="z-0">
@@ -70,11 +56,11 @@ function App() {
       </div>
       
       <div class="flex text-black">
-        <GeneList list={data.bio_data}/>
-        <GraphView />
+        <GeneList list={graphData}/>
+        <GraphView graph_data={graphData}/>
       </div>
  
-      {(showModal && <Modal isOpen={showModal} onClose={() => setShowModal(false)}/>)}
+      {(showModal && <Modal isOpen={showModal} onClose={() => setShowModal(false)} handleModalData={handleModalData}/>)}
     </div>
   );
 }

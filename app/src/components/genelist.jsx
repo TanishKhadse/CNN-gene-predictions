@@ -20,8 +20,8 @@ export default function GeneList({list}) {
                 </div>
                 <div class="border-[1px] border-neutral-500 rounded-sm bg-neutral-200 "> {/* set default height here */}
                     {list && (
-                    list.map((g) => 
-                        ( <Entry name={g} /> )
+                    list.map((g, id) => 
+                        ( <Entry name={g.name} key={id} /> )
                         )
                     )}
                 </div>

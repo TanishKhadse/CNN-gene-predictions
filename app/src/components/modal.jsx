@@ -1,9 +1,12 @@
 import {motion} from "framer-motion"
 import Backdrop from "./backdrop";
 import { BiX } from "react-icons/bi";
-import { useCallback } from "react";
+import { useState, useRef, useCallback } from "react";
 
-export default function Modal({isOpen, onClose}) {
+export default function Modal({isOpen, onClose, handleModalData}) {
+    const diseaseInputRef = useRef(null)
+    const nodesInputRef = useRef(null)
+
 
     const dropIn = {
 
@@ -12,9 +15,30 @@ export default function Modal({isOpen, onClose}) {
         exit: {y: "-100vh", opacity: 1},
     }
 
-    const handleSubmit = useCallback(() => {
+    const handleSubmit = async () => {
+        const disease_name = diseaseInputRef.current.value
+        let num_nodes = nodesInputRef.current.value
+        if (!num_nodes) {
+            num_nodes = 10
+        }
+
+        // extract values from disease_name and num_nodes
+
+        fetch("/graph", {
+            method: "POST", 
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({disease_name: disease_name, num_nodes: num_nodes})}
+        ).then(
+            res => res.json()
+        ).then(
+            data => handleModalData(data)
+        ).catch(error => console.log(error))
+        
+
         onClose()
-    }, [])
+    }
 
     return (
         <Backdrop onClick={onClose}>
@@ -30,7 +54,7 @@ export default function Modal({isOpen, onClose}) {
                     m-auto
                     w-[30%]
                     h-[35%]
-                    bg-neutral-300
+                    bg-slate-300/100
                     relative
                     py-2
                     z-50
@@ -51,6 +75,7 @@ export default function Modal({isOpen, onClose}) {
                     id="disease"
                     placeholder="enter a disease"
                     class="outline px-2 py-1 text-center my-2"
+                    ref={diseaseInputRef}
                 >
                 </input>
                 <input
@@ -58,7 +83,8 @@ export default function Modal({isOpen, onClose}) {
                     id="num"
                     placeholder="(default 10)"
                     class="outline px-2 py-1 text-center my-2 mb-4"
-                >
+                    ref={nodesInputRef}
+                    >
                 </input>
                 <div class="
                     cursor-pointer 
