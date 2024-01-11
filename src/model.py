@@ -1,11 +1,11 @@
 import torch 
 from torch_geometric.nn import GCNConv, SAGEConv, to_hetero
-from torch_geometric.nn import GCNConv
+
 from torch_geometric.utils import negative_sampling
 import torch_geometric.transforms as T
 from sklearn.metrics import roc_auc_score
 from graph_generation import gm, gm_graph
-
+import torch.nn.functional as F
 
 device = torch.device("cpu")
 
@@ -65,3 +65,34 @@ class Model(torch.nn.Module):
 model = Model(hidden_channels=64)
 optimizer = torch.optim.Adam(params=model.parameters(), lr=0.001)
 criterion = torch.nn.BCEWithLogitsLoss()
+
+
+
+# Training
+'''
+    define loss and optimizer
+    model.train() primes the model to get ready for training
+    optimizer.zero_grad() resets the gradients
+
+    - make a prediction of the graph;  decode algorithm ~ makes graph prediction
+
+    - need to use negative edge sampling to compute loss (compare with negative-edge samples with prediction to see if negative-edge samples are found)
+    - needs to account for multiple kinds of edges; gene-gene, disease-desease, gene-disease
+
+    - use binary_cross_entripy_with_logits_loss for the loss function
+    - loss.backward()
+    - optimizer.step()
+'''
+
+def train():
+    model.train()
+    optimizer.zero_grad()
+    pred = model(gm_graph)
+    loss = criterion(pred, gm_graph["gene", "gda", "disease"].edge_label)
+    loss.backward()
+    optimizer.step()
+    return loss
+
+
+def test(data):
+    model.eval()

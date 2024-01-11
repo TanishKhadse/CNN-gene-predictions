@@ -54,11 +54,11 @@ def serialize_node(node):
 
 
 
-@app.route('/data')
-def index():
+# @app.route('/data')
+# def index():
 
-    return {"bio_data": ["bio_data1", "bio_data2", "bio_data3", "bio_data4"],
-            "graph_data": ["AIDS", "HIV"]}
+#     return {"bio_data": ["bio_data1", "bio_data2", "bio_data3", "bio_data4"],
+#             "graph_data": ["AIDS", "HIV"]}
 
 
 
